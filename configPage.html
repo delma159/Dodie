@@ -1,0 +1,150 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="style/styleConfig.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <!--********************************************************HEADER-->
+    <header>
+      <div id="utilisateur">
+        <p>NOM UTILISATEUR</p>
+        <a alt="" href="accueilPage.html">
+          <img src="SVGIcons/signout.svg" alt="" />
+        </a>
+      </div>
+      <a id="panier" href="panierPage.html">
+        <img src="SVGIcons/cart.svg" alt="" />
+        <p></p>
+      </a>
+    </header>
+
+    <main>
+      <div class="intMainLeftContainer">
+        <div class="title"><h2>COMPOSANTS :</h2></div>
+
+        <div class="composants">
+          <img src="SVGIcons/processeur.svg" alt="" />
+          <h2>PROCESSEUR</h2>
+
+          <img
+            class="imgRightComp"
+            src="SVGIcons/plus.svg"
+            alt=""
+            onclick="document.getElementById('blockOnOf').style.display = 'block'"
+          />
+        </div>
+        <div class="composantChoisi" id="processeur"></div>
+
+        <div class="composants">
+          <img src="SVGIcons/carteMere.svg" alt="" />
+          <h2>CARTE MÈRE</h2>
+          <img
+            class="imgRightComp"
+            src="SVGIcons/plus.svg"
+            alt=""
+            onclick="document.getElementById('blockOnOf').style.display = 'block'"
+          />
+        </div>
+        <div class="composantChoisi" id="carteGraphique"></div>
+
+        <div class="composants">
+          <img src="SVGIcons/ram.svg" alt="" />
+          <h2>MÉMOIRE VIVE</h2>
+          <img
+            class="imgRightComp"
+            src="SVGIcons/plus.svg"
+            alt=""
+            onclick="document.getElementById('blockOnOf').style.display = 'block'"
+          />
+        </div>
+        <div class="composantChoisi" id="memoireVive"></div>
+
+        <div class="composants">
+          <img src="SVGIcons/carteGraphique.svg" alt="" />
+          <h2>CARTE GRAPHIQUE</h2>
+          <img
+            class="imgRightComp"
+            src="SVGIcons/plus.svg"
+            alt=""
+            onclick="document.getElementById('blockOnOf').style.display = 'block'"
+          />
+        </div>
+        <div class="composantChoisi" id="carteGraphique"></div>
+
+        <div class="composants">
+          <img src="SVGIcons/disqueDur.svg" alt="" />
+          <h2>DISQUE DUR</h2>
+          <img
+            class="imgRightComp"
+            src="SVGIcons/plus.svg"
+            alt=""
+            onclick="document.getElementById('blockOnOf').style.display = 'block'"
+          />
+        </div>
+        <div class="composantChoisi" id="disqueDur"></div>
+
+        <div class="composants">
+          <img src="SVGIcons/boitier.svg" alt="" />
+          <h2>BOÎTIER</h2>
+          <img
+            class="imgRightComp"
+            src="SVGIcons/plus.svg"
+            alt=""
+            onclick="document.getElementById('blockOnOf').style.display = 'block'"
+          />
+        </div>
+        <div class="composantChoisi" id="boitier"></div>
+      </div>
+
+      <div class="intMainRightContainer">
+        <!--!!Right container************************************-->
+
+        <div class="title"><h2>RÉCAPITULATIF</h2></div>
+        <div class="recapContainer">
+          <!--!comp recap****************************************-->
+
+          <div class="recapContainerMain"><div id="composantRecap"></div></div>
+          <div class="recapContainerBtn">
+            <button class="btnRecap">Ajouter en panier</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!--!!POPUP BLOCK BELOW--------------------------------------------------------->
+    <div id="blockOnOf">
+      <div id="intBlockOnOf">
+        <div class="OnOfHeader">
+          <!--!!TITLE AND CLOCE BUTON-->
+          <h2>!!ADD TITLE BY AJAX FROM DATABASE!!</h2>
+          <img
+            src="SVGIcons/cross.svg"
+            alt=""
+            onclick="document.getElementById('blockOnOf').style.display = 'none'"
+          />
+        </div>
+
+        <div class="OnOfRest">
+          <div class="intOnOfRestLeft">
+            <div class="restLeftHeader">
+              <div class="productsHeader"><p>Désignation</p></div>
+              <div class="priceHeader"><p>Prix</p></div>
+            </div>
+            <div class="restLeftMain">
+              <!--!! ADD DATABASE PRODUCTS BELOW-->
+              <div
+                id="productContainer"
+                onclick="document.getElementById('processeur').style.cssText = 'display: block;'"
+              >
+                <div class="products"></div>
+                <div class="price"></div>
+              </div>
+            </div>
+          </div>
+          <div class="intOnOfRestRight"></div>
+        </div>
+      </div>
+    </div>
+    <footer></footer>
+  </body>
+</html>

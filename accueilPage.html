@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="style/styleAccueil.css" />
+  </head>
+  <body>
+    <main>
+      <aside><img src="SVGIcons/imgBackgroundPC.svg" alt="" /></aside>
+
+      <!--************************************************************LOGIN-->
+      <div id="loginPage">
+        <form action="">
+          <p>Login</p>
+          <div class="inputContainer">
+            <label for=""><img src="SVGIcons/login.svg" alt="" /></label>
+            <input type="text" placeholder="Username" name="usrnm" />
+          </div>
+          <button type="submit" class="btn">Login</button>
+          <p class="switchLogIN_OUT" onclick="switchToSignin()">
+            Nouveau utilisateur?
+          </p>
+        </form>
+      </div>
+
+      <!--************************************************************SIGN IN-->
+      <div id="signinPage">
+        <form action="">
+          <p>Sign in</p>
+          <div class="inputContainer">
+            <label for=""><img src="SVGIcons/signin.svg" alt="" /></label>
+            <input type="text" placeholder="Username" name="usrnm" />
+          </div>
+          <button type="submit" class="btn">Sign in</button>
+          <p class="switchLogIN_OUT" onclick="switchToLognin()">
+            Avez vous deja un compte
+          </p>
+        </form>
+      </div>
+    </main>
+    <script src="script/scriptAcceuil.js"></script>
+  </body>
+</html>
