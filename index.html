@@ -3,11 +3,11 @@
     <link rel="stylesheet" href="CSS/style.css" />
     <script src="JS/script.js"></script>
 </head>
-<body>
+<body onload="load">
 <header><br>
     <form method="POST" name="inscription">
         <input type="text" name="pseudo" placeholder="Pseudo"><br><br>
-        <input type="submit" value="Inscription">
+        <input type="submit" value="Connexion">
     </form>
 
 </header>
@@ -122,7 +122,7 @@
                             onclick="document.getElementById('processeur').style.cssText = 'display: block;'"
                     >
                         <div class="products"></div>
-                        <div class="price"></div>
+                        <div id="productPrice" class="price"></div>
                     </div>
                 </div>
             </div>
