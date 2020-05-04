@@ -1,21 +1,25 @@
 "use strict";
 
+console.log("oui")
+// id = productContainer
 
-function rafraichir() {
+appel()
 
-    var xhr = new XMLHttpRequest();
+function chargement(){
 
-    xhr.onreadystatechange = function () {
+    let reponse = JSON.parse(this.responseText);
+    console.log(reponse)
 
-    xhr.open('get', window.location.protocol + "//" + window.location.host + "/processeurs ", true);    // définit le type (get), l'url et l'asynchrone de la requête
-    xhr.responseType = "json";
-    xhr.onload = function rafraichir() {
+    document.getElementById("productContainer").innerHTML = reponse
 
-        let reponse = JSON.parse(xhr.responseText);
-        console.log(reponse)
+}
 
 
-        xhr.send(reponse);
-    }
+function appel(){
+
+    let xhr = new XMLHttpRequest();
+    xhr.open('get', "http://localhost/processeurs" , true);
+    xhr.onload = chargement ;
+    xhr.send();
 
 }
