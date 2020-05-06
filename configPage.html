@@ -1,18 +1,18 @@
 <html>
   <head>
     <link rel="stylesheet" href="CSS/styleConfig.css" />
-    <script src="script.js"></script>
+    <script src="JS/script.js"></script>
   </head>
-  <body>
+  <body onload="chargement()">
     <!--********************************************************HEADER-->
     <header>
       <div id="utilisateur">
         <p>NOM UTILISATEUR</p>
-        <a alt="" href="accueilPage.html">
+        <a alt="" href="http://localhost:90/page?url=accueilPage">
           <img src="IMG/signout.svg" alt="" />
         </a>
       </div>
-      <a id="panier" href="panierPage.html">
+      <a id="panier" href="http://localhost:90/page?url=panierPage">
         <img src="IMG/cart.svg" alt="" />
         <p></p>
       </a>
@@ -136,8 +136,8 @@
                 id="productContainer"
                 onclick="document.getElementById('processeur').style.cssText = 'display: block;'"
               >
-                <div class="products"></div>
-                <div class="price"></div>
+                <div id="productsProc"></div>
+                <div id="priceProc"></div>
               </div>
             </div>
           </div>

@@ -9,13 +9,15 @@
 
       <!--************************************************************LOGIN-->
       <div id="loginPage">
-        <form id="form" action="">
+        <form name="formulaire" id="form" onsubmit="return enregistrePseudo(this)">
           <p>Login</p>
           <div class="inputContainer">
             <label ><img src="IMG/login.svg" alt="" /></label>
-            <input id="pseudo" type="text" placeholder="pseudo" name="pseudo" value="" />
-          </div>
-          <button id="btn" class="btn" type="submit" >Login</button>
+            <input id="pseudo" type="text" placeholder="pseudo" name="pseudo" value="" required />
+
+          <button id="btn" class="btn" type="submit" href='http://localhost:90/page?url=configPage'> Login </button>
+          </div><br>
+
           <p class="switchLogIN_OUT" onclick="switchToSignin()">
             Nouveau utilisateur?
           </p>
