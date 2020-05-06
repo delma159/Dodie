@@ -35,7 +35,8 @@ function appel(){
 
 
 
-/* function checkPseudo(){
+function checkPseudo(){
+    let pseudo = document.getElementById("pseudo")
     let xhr = new XMLHttpRequest();
     xhr.open('get' , "check_pseudo" , true)
     xhr.onload = function(){
@@ -46,4 +47,4 @@ function appel(){
     }
 
 
-} */
+}
