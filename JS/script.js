@@ -1,31 +1,28 @@
 "use strict";
 
-console.log("oui")
-// id = productContainer
-
-
-    appel()
-
-
 
 function chargement(){
+    appelProc()
 
     let reponse = JSON.parse(this.responseText);
-    let procName="<table>";
+    let procNom=""
+    let procPrix=""
+
 
     for(let i of reponse){
 
-        procName += "<tr><td>"+ i.ProcesseurName +"</td></tr><tr><td>"+ i.ProcesseurPrix +" </td></tr> "
+        procNom += "<div id=\""+i+"\">" + i.ProcesseurName + "</div><br>"
+        procPrix += "<div id=\""+i+"\">" + i.ProcesseurPrix + "</div><br>"
+
 
     }
-    procName += "</table>";
 
-
-    document.getElementById("productContainer").innerHTML = procName
+    document.getElementById("productsProc").innerHTML = procNom
+    document.getElementById("priceProc").innerHTML = procPrix
 }
 
 
-function appel(){
+function appelProc(){
 
     let xhr = new XMLHttpRequest();
     xhr.open('get', "processeurs" , true);
@@ -34,17 +31,8 @@ function appel(){
 }
 
 
-
-function checkPseudo(){
-    let pseudo = document.getElementById("pseudo")
-    let xhr = new XMLHttpRequest();
-    xhr.open('get' , "check_pseudo" , true)
-    xhr.onload = function(){
-        let check = 0 ;
-
-        if(check = value.name)
-            alert("pseudo deja prit vous etes bien...")
-    }
-
+function remplire(){
+    var procDonnees = document.getElementById("processeur").value
+    procDonnees.innerHTML
 
 }
