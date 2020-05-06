@@ -1,7 +1,7 @@
 "use strict";
 
 
-function chargement(){
+function chargementProc(){
     appelProc()
 
     let reponse = JSON.parse(this.responseText);
@@ -26,13 +26,45 @@ function appelProc(){
 
     let xhr = new XMLHttpRequest();
     xhr.open('get', "processeurs" , true);
-    xhr.onload = chargement ;
+    xhr.onload = chargementProc ;
+    xhr.send();
+}
+
+function chargementCM() {
+    appelCM()
+    console.log(this)
+    let reponse = JSON.parse(this.responseText);
+    let Nom = ""
+    let Prix = ""
+
+
+    for (let i of reponse) {
+
+        Nom += "<div id=\"" + i + "\">" + i.CarteMereName + "</div><br>"
+        Prix += "<div id=\"" + i + "\">" + i.CarteMerePrix + "</div><br>"
+    }
+
+    document.getElementById("productsCm").innerHTML = Nom
+    document.getElementById("priceCm").innerHTML = Prix
+
+}
+
+function appelCM(){
+
+    let xhr = new XMLHttpRequest();
+    xhr.open('get', "carteMere" , true);
+    xhr.onload = chargementCM ;
     xhr.send();
 }
 
 
-function remplire(){
+
+/*function remplire(){
     var procDonnees = document.getElementById("processeur").value
     procDonnees.innerHTML
 
-}
+}*/
+
+
+
+
