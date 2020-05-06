@@ -252,13 +252,13 @@ footer {
   flex-direction: row;
   border-bottom: white 1px solid;
 }
-#productsProc {
+#productsProc, #productsCm {
   background-color: lightgrey;
   width: 446px;
   height: 100%;
   border-right: 1px white solid;
 }
-#priceProc {
+#priceProc, #productsCm {
   background-color: lightgrey;
   width: calc(100% - 446px);
   height: 100%;
