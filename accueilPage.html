@@ -9,16 +9,19 @@
 
       <!--************************************************************LOGIN-->
       <div id="loginPage">
-        <form name="formulaire" id="form" onsubmit="return enregistrePseudo(this)">
+        <form name="formulaire" id="form"  onsubmit="return enregistrePseudo(this)" >
           <p>Login</p>
           <div class="inputContainer">
             <label ><img src="IMG/login.svg" alt="" /></label>
             <input id="pseudo" type="text" placeholder="pseudo" name="pseudo" value="" required />
 
-          <button id="btn" class="btn" type="submit" href='http://localhost:90/page?url=configPage'> Login </button>
+            <button id="btn" class="btn" type="submit"> Enregistre </button>
+
+            <a class="btn" href="http://localhost:90/page?url=configPage" > Page suivante </a>
+
           </div><br>
 
-          <p class="switchLogIN_OUT" onclick="switchToSignin()">
+          <p class="switchLogIN_OUT" onclick="switchToSignin()"><br><br><br><br><br>
             Nouveau utilisateur?
           </p>
         </form>
