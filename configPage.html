@@ -1,156 +1,186 @@
 <html>
-  <head>
-    <link rel="stylesheet" href="CSS/styleConfig.css" />
-    <script src="JS/script.js"></script>
-  </head>
-  <body onload="chargementProc()">
-    <!--********************************************************HEADER-->
-    <header>
-      <div id="utilisateur">
-        <p>NOM UTILISATEUR</p>
-        <a alt="" href="http://localhost:90/page?url=accueilPage">
-          <img src="IMG/signout.svg" alt="" />
-        </a>
-      </div>
-      <a id="panier" href="http://localhost:90/page?url=panierPage">
-        <img src="IMG/cart.svg" alt="" />
-        <p></p>
-      </a>
-    </header>
 
-    <main>
-      <div class="intMainLeftContainer">
-        <div class="title"><h2>COMPOSANTS :</h2></div>
+<head>
+  <link rel="stylesheet" href="CSS/styleConfig.css" />
+  <script src="JS/script.js"></script>
+</head>
 
-        <div class="composants">
-          <img src="IMG/processeur.svg" alt="" />
-          <h2>PROCESSEUR</h2>
+<body onload="chargement()">
+<!--************************************************************************************************HEADER-->
+<header>
+  <div id="utilisateur">
+    <p>NOM UTILISATEUR</p>
+    <a alt="" href="http://localhost:90/page?url=accueilPage">
+      <img src="IMG/signout.svg" alt="" />
+    </a>
+  </div>
+  <a id="panier" href="http://localhost:90/page?url=panierPage">
+    <img src="IMG/cart.svg" alt="" />
+    <p></p>
+  </a>
+</header>
+<!--**************************************************************************************************MAIN-->
+<main>
+  <div class="intMainLeftContainer">
+    <div class="title">
+      <h2>COMPOSANTS :</h2>
+    </div>
 
-          <img
-            class="imgRightComp"
-            src="IMG/plus.svg"
-            alt=""
-            onclick="document.getElementById('blockOnOf').style.display = 'block'"
-          />
+    <div class="composants">
+      <input type="hidden">
+      <img src="IMG/processeur.svg" />
+      <h2>PROCESSEUR</h2>
+      <img class="imgRightComp" src="IMG/plus.svg"
+           onclick="document.getElementById('processeur').style.display = 'flex'" />
+    </div>
+
+    <div class="composantChoisi" id="processeur">
+
+
+      <div class="composantChoisiTitle">
+        <div class="prodDescription">
+          <h3>Description</h3>
         </div>
-        <div class="composantChoisi" id="processeur"></div>
-
-        <div id="carteMere" class="composants">
-          <img src="IMG/carteMere.svg" alt="" />
-          <h2>CARTE MÈRE</h2>
-          <img
-            class="imgRightComp"
-            src="IMG/plus.svg"
-            alt=""
-            onclick="document.getElementById('blockOnOf').style.display = 'block'"
-          />
-        </div>
-        <div class="composantChoisi" id="carteGraphique"></div>
-
-        <div class="composants">
-          <img src="IMG/ram.svg" alt="" />
-          <h2>MÉMOIRE VIVE</h2>
-          <img
-            class="imgRightComp"
-            src="IMG/plus.svg"
-            alt=""
-            onclick="document.getElementById('blockOnOf').style.display = 'block'"
-          />
-        </div>
-        <div class="composantChoisi" id="memoireVive"></div>
-
-        <div class="composants">
-          <img src="IMG/carteGraphique.svg" alt="" />
-          <h2>CARTE GRAPHIQUE</h2>
-          <img
-            class="imgRightComp"
-            src="IMG/plus.svg"
-            alt=""
-            onclick="document.getElementById('blockOnOf').style.display = 'block'"
-          />
-        </div>
-        <div class="composantChoisi" id="carteGraphique"></div>
-
-        <div class="composants">
-          <img src="IMG/disqueDur.svg" alt="" />
-          <h2>DISQUE DUR</h2>
-          <img
-            class="imgRightComp"
-            src="IMG/plus.svg"
-            alt=""
-            onclick="document.getElementById('blockOnOf').style.display = 'block'"
-          />
-        </div>
-        <div class="composantChoisi" id="disqueDur"></div>
-
-        <div class="composants">
-          <img src="IMG/boitier.svg" alt="" />
-          <h2>BOÎTIER</h2>
-          <img
-            class="imgRightComp"
-            src="IMG/plus.svg"
-            alt=""
-            onclick="document.getElementById('blockOnOf').style.display = 'block'"
-          />
-        </div>
-        <div class="composantChoisi" id="boitier"></div>
-      </div>
-
-      <div class="intMainRightContainer">
-        <!--!!Right container************************************-->
-
-        <div class="title"><h2>RÉCAPITULATIF</h2></div>
-        <div class="recapContainer">
-          <!--!comp recap****************************************-->
-
-          <div class="recapContainerMain"><div id="composantRecap"></div></div>
-          <div class="recapContainerBtn">
-            <button class="btnRecap">Ajouter en panier</button>
-          </div>
+        <div class="prodPrix">
+          <h3>Prix</h3>
         </div>
       </div>
-    </main>
+      <div class="space"><input type="hidden" name="inputProcesseur"></div>
 
-    <!--!!POPUP BLOCK BELOW--------------------------------------------------------->
-    <div id="blockOnOf">
-      <div id="intBlockOnOf">
-        <div class="OnOfHeader">
-          <!--!!TITLE AND CLOCE BUTON-->
-          <h2>!!ADD TITLE BY AJAX FROM DATABASE!!</h2>
-          <img
-            src="IMG/cross.svg"
-            alt=""
-            onclick="document.getElementById('blockOnOf').style.display = 'none'"
-          />
-        </div>
 
-        <div class="OnOfRest">
-          <div class="intOnOfRestLeft">
-            <div class="restLeftHeader">
-              <div class="productsHeader"><p>Désignation</p></div>
-              <div class="priceHeader"><p>Prix</p></div>
-            </div>
-            <div class="restLeftMain">
-              <!--!! ADD DATABASE PRODUCTS BELOW-->
-              <div
-                id="productContainer"
-                onclick="document.getElementById('processeur').style.cssText = 'display: block;'"
-              >
-                <div id="productsProc"></div>
-                <div id="priceProc"></div>
-              </div>
-              <div
-                      id="productContainer"
-                      onclick="document.getElementById('carteMere').style.cssText = 'display: block;'"
-              >
-                <div id="productsCm"></div>
-                <div id="priceCm"></div>
-            </div>
-          </div>
-          <div class="intOnOfRestRight"></div>
+    </div>
+
+
+    <div class="composants">
+      <img src="IMG/carteMere.svg" alt="" />
+      <h2>CARTE MÈRE</h2>
+      <img class="imgRightComp" src="IMG/plus.svg" alt=""
+           onclick="document.getElementById('carteMere').style.display = 'flex'" />
+    </div>
+    <div class="composantChoisi" id="carteMere">
+
+
+      <div class="composantChoisiTitle">
+        <div class="prodDescription">
+          <h3>Description</h3>
         </div>
+        <div class="prodPrix">
+          <h3>Prix</h3>
+        </div>
+      </div>
+      <div class="space"><input type="hidden" name="inputCM"></div>
+
+
+    </div>
+
+    <div class="composants">
+      <img src="IMG/ram.svg" alt="" />
+      <h2>MÉMOIRE VIVE</h2>
+      <img class="imgRightComp" src="IMG/plus.svg" alt=""
+           onclick="document.getElementById('memoireVive').style.display = 'flex'" />
+    </div>
+    <div class="composantChoisi" id="memoireVive">
+
+
+      <div class="composantChoisiTitle">
+        <div class="prodDescription">
+          <h3>Description</h3>
+        </div>
+        <div class="prodPrix">
+          <h3>Prix</h3>
+        </div>
+      </div>
+      <div class="space"><input type="hidden" name="inputMV"></div>
+
+
+    </div>
+
+    <div class="composants">
+      <img src="IMG/carteGraphique.svg" alt="" />
+      <h2>CARTE GRAPHIQUE</h2>
+      <img class="imgRightComp" src="IMG/plus.svg" alt=""
+           onclick="document.getElementById('carteGraphique').style.display = 'flex'" />
+    </div>
+    <div class="composantChoisi" id="carteGraphique">
+
+
+      <div class="composantChoisiTitle">
+        <div class="prodDescription">
+          <h3>Description</h3>
+        </div>
+        <div class="prodPrix">
+          <h3>Prix</h3>
+        </div>
+      </div>
+      <div class="space"><input type="hidden" name="inputCG"></div>
+
+
+    </div>
+
+    <div class="composants">
+      <img src="IMG/disqueDur.svg" alt="" />
+      <h2>DISQUE DUR</h2>
+      <img class="imgRightComp" src="IMG/plus.svg" alt=""
+           onclick="document.getElementById('disqueDur').style.display = 'flex'" />
+    </div>
+    <div class="composantChoisi" id="disqueDur">
+
+      <div class="composantChoisiTitle">
+        <div class="prodDescription">
+          <h3>Description</h3>
+        </div>
+        <div class="prodPrix">
+          <h3>Prix</h3>
+        </div>
+      </div>
+      <div class="space"><input type="hidden" name="inputDD"></div>
+
+    </div>
+
+    <div class="composants">
+      <img src="IMG/boitier.svg" alt="" />
+      <h2>BOÎTIER</h2>
+      <img class="imgRightComp" src="IMG/plus.svg" alt=""
+           onclick="document.getElementById('boitier').style.display = 'flex'" />
+    </div>
+    <div class="composantChoisi" id="boitier">
+
+
+      <div class="composantChoisiTitle">
+        <div class="prodDescription">
+          <h3>Description</h3>
+        </div>
+        <div class="prodPrix">
+          <h3>Prix</h3>
+        </div>
+      </div>
+      <div class="space"><input type="hidden" name="inputBoitier"></div>
+
+
+    </div>
+  </div>
+
+  <div class="intMainRightContainer">
+    <!--!!Right container************************************-->
+
+    <div class="title">
+      <h2>RÉCAPITULATIF</h2>
+    </div>
+    <div class="recapContainer">
+      <!--!comp recap****************************************-->
+
+      <div class="recapContainerMain">
+        <div id="composantRecap"></div>
+      </div>
+      <div class="recapContainerBtn">
+        <button class="btnRecap">Ajouter en panier</button>
       </div>
     </div>
-    <footer></footer>
-  </body>
+  </div>
+</main>
+<!--**************************************************************************************************FOOTER-->
+
+<footer></footer>
+</body>
+
 </html>
