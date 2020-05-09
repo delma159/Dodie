@@ -1,17 +1,18 @@
 "use strict";
 
+
 function chargement(){
-    appelProc()
-    appelCM()
-    appelMV()
-    appelCG()
-    appelDD()
-    appelBoitier()
+    appelProc();
+    appelCM();
+    appelMV();
+    appelCG();
+    appelDD();
+    appelBoitier();
 }
 
-function nomUtilisateur(){
-    
-}
+
+
+
 
 
 /* appel processeur*/
@@ -26,7 +27,6 @@ function appelProc() {
 
 function chargementProc() {
     let reponse = this.response;
-    console.log(reponse);
 
     let procId = "";
     for (let i of reponse) {
@@ -67,7 +67,6 @@ function appelCM() {
 
 function chargementCM() {
     let reponse = this.response;
-    console.log(reponse);
 
     let procId = "";
     for (let i of reponse) {
@@ -108,7 +107,6 @@ function appelMV() {
 
 function chargementMV() {
     let reponse = this.response;
-    console.log(reponse);
 
     let procId = "";
     for (let i of reponse) {
@@ -149,7 +147,6 @@ function appelCG() {
 
 function chargementCG() {
     let reponse = this.response;
-    console.log(reponse);
 
     let procId = "";
     for (let i of reponse) {
@@ -189,7 +186,6 @@ function appelDD() {
 
 function chargementDD() {
     let reponse = this.response;
-    console.log(reponse);
 
     let procId = "";
     for (let i of reponse) {
@@ -220,6 +216,7 @@ function chargementDD() {
 /***************************************************************************************************************appel boitier */
 
 function appelBoitier() {
+
     let xhr = new XMLHttpRequest();
     xhr.open("get", "boitier", true);
     xhr.onload = chargementBoitier;
@@ -230,11 +227,11 @@ function appelBoitier() {
 
 
 function chargementBoitier() {
+
     let reponse = this.response;
-    console.log(reponse);
 
     let procId = "";
-    for (let i of reponse) {
+    for (let i of reponse){
         let giveId = "boitierId" + i.BoitierId;
 
         procId += '<div class="containerProduits" id="' + giveId + '" onclick="choisirComposant()">' +  /* onClock ne functione pas */
@@ -247,13 +244,12 @@ function chargementBoitier() {
             '<p> ' + 'Langeur:' + i.langeur + 'hauteur:' + i.hauteur + '</p>' +
             '</div>' +
             '</div>' +
-            '<img src="" alt="" /*TODO add ploto name drom database OPTIONAL*/>' +
-            '</div>' +
-            '<div class="intContainerPrix">' +
-            '<p>' + i.BoitierPrix + '</p>' +
-            '</div>' +
-            '</div>';
+            '<img src="" alt="" /TODO add ploto name drom database OPTIONAL*/>' +
+        '</div>' +
+        '<div class="intContainerPrix">' +
+        '<p>' + i.BoitierPrix + '</p>' +
+        '</div>' +
+        '</div>';
     };
     document.getElementById("boitier").insertAdjacentHTML('beforeend', procId);
-
 }
